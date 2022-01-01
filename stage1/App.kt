@@ -25,15 +25,6 @@ class App()
     }
 
 
-    private fun create(name: String, color: String, age: Int, weight: Int)
-    {
-        var index = emptyElements.first();
-        emptyElements.remove(index);
-        keyList[index] = name;
-        dataList[index] = CatData(color, age, weight);
-    }
-
-
     private fun read(targetName: String)
     {
         for (i in 0..(listLen-1))
@@ -49,6 +40,16 @@ class App()
     }
 
 
+    private fun create(name: String, color: String, age: Int, weight: Int)
+    {
+        var index = emptyElements.first();
+        emptyElements.remove(index);
+        keyList[index] = name;
+        dataList[index] = CatData(color, age, weight);
+        this.read(name);
+    }
+
+
     private fun delete(targetName: String)
     {
         for (i in 0..(listLen-1))
@@ -59,6 +60,7 @@ class App()
                 emptyElements.add(i);
                 keyList[i] = null;
                 dataList[i] = null;
+                println("OK");
                 break;
             }
         }
