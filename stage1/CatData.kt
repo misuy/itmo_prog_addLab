@@ -1,6 +1,6 @@
 package addLabStage1;
 
-class CatData(val _color: String, val _age: Int, val _weight: Int)
+data class CatData(val _color: String, val _age: Int, val _weight: Int)
 {
     var color: String;
     var age: Int;
